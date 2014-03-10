@@ -1,0 +1,4 @@
+name: DynamicBungee
+author: MCProHosting
+version: ${project.version}
+main: com.mcprohosting.plugins.dynamicbungee.DynamicBungee
