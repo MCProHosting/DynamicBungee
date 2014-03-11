@@ -21,14 +21,17 @@ public class DynamicBungee extends Plugin {
     private MainConfig config;
     private JedisPool jedis;
     private NetHandler dispatch;
-    private Thread delegate;
     @Getter private ServerHeartbeatHandler beatHandler;
+
+    private DynamicPluginLoader pluginLoader;
 
     public void onEnable() {
         plugin = this;
         config = new MainConfig(this);
 
         initJedis();
+
+        pluginLoader = new DynamicPluginLoader();
     }
 
     public static DynamicBungee getPlugin() {
