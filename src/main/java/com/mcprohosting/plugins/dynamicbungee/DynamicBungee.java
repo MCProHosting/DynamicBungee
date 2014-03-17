@@ -21,7 +21,7 @@ public class DynamicBungee extends Plugin {
     private MainConfig config;
     private JedisPool jedis;
     private NetHandler dispatch;
-    @Getter private ServerHeartbeatHandler beatHandler;
+    private ServerHeartbeatHandler beatHandler;
 
     private DynamicPluginLoader pluginLoader;
 
@@ -79,5 +79,9 @@ public class DynamicBungee extends Plugin {
 
     public ConcurrentMap<String, ServerInfo> getServerInfo() {
         return new ConcurrentHashMap<>(ProxyServer.getInstance().getServers());
+    }
+
+    public ServerHeartbeatHandler getBeatHandler() {
+        return beatHandler;
     }
 }
