@@ -1,6 +1,7 @@
 package com.mcprohosting.plugins.dynamicbungee.server;
 
 import com.mcprohosting.plugins.dynamicbungee.DynamicBungee;
+import com.mcprohosting.plugins.dynamicbungee.config.MainConfig;
 import com.mcprohosting.plugins.dynamicbungee.data.NetTaskSubscribe;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.config.ServerInfo;
@@ -39,7 +40,7 @@ public class ServerHandler {
             }
             disconnectAll(serverInfo);
         }
-        ServerInfo info = ProxyServer.getInstance().constructServerInfo(name, socketAddress, "MOTD Replace Me", false);
+        ServerInfo info = ProxyServer.getInstance().constructServerInfo(name, socketAddress, DynamicBungee.getPlugin().getConf().settings_motd, false);
         ProxyServer.getInstance().getServers().put(name, info);
         DynamicBungee.getPlugin().getBeatHandler().heartbeatReceived(info, list);
     }

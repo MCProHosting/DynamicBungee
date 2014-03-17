@@ -26,6 +26,7 @@ public class MainConfig extends Config {
         }
     }
 
+    public String settings_motd = "Replace Me MOTD";
     private String jedis_host = "127.0.0.1";
     private int jedis_port = 6379;
     private int jedis_timeout = 10000;
