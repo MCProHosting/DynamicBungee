@@ -17,6 +17,7 @@ public class NetDelegate extends JedisPubSub implements Runnable {
         channels = new CopyOnWriteArrayList<>();
 
         ProxyServer.getInstance().getScheduler().runAsync(DynamicBungee.getPlugin(), new ChannelSubscriber("heartbeat"));
+        ProxyServer.getInstance().getScheduler().runAsync(DynamicBungee.getPlugin(), new ChannelSubscriber("dynamicbungee"));
     }
 
     @Override

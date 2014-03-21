@@ -2,6 +2,7 @@ package com.mcprohosting.plugins.dynamicbungee;
 
 import com.mcprohosting.plugins.dynamicbungee.config.MainConfig;
 import com.mcprohosting.plugins.dynamicbungee.data.NetHandler;
+import com.mcprohosting.plugins.dynamicbungee.server.BaseReceiver;
 import com.mcprohosting.plugins.dynamicbungee.server.ServerHandler;
 import com.mcprohosting.plugins.dynamicbungee.server.ServerHeartbeatHandler;
 import lombok.Getter;
@@ -51,6 +52,7 @@ public class DynamicBungee extends Plugin {
 
         dispatch = new NetHandler();
         getDispatch().registerTasks(new ServerHandler());
+        getDispatch().registerTasks(new BaseReceiver());
         beatHandler = new ServerHeartbeatHandler();
     }
 
