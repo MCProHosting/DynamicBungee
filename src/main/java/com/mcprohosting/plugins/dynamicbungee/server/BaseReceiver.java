@@ -33,8 +33,7 @@ public class BaseReceiver {
             return;
         }
 
-        if (serverInfo == null) {
-            proxiedPlayer.sendMessage(ChatColor.RED + "You are already connected to this server!");
+        if (proxiedPlayer == null) {
             return;
         }
 
