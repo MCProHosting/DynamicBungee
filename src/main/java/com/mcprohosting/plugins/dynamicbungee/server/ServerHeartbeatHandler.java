@@ -67,4 +67,16 @@ public class ServerHeartbeatHandler implements Runnable {
         ProxyServer.getInstance().getScheduler().schedule(DynamicBungee.getPlugin(), this, 30, TimeUnit.SECONDS);
     }
 
+    /**
+     * Get players online
+     */
+    public static Integer getPlayersOnline() {
+        Collection<Heartbeat> values = DynamicBungee.getPlugin().getBeatHandler().heartbeats.values();
+        Integer count = 0;
+        for (Heartbeat heartbeat : values) {
+            count += heartbeat.getPlayers().size();
+        }
+        return count;
+    }
+
 }
