@@ -1,6 +1,8 @@
 package com.mcprohosting.plugins.dynamicbungee.server;
 
+import com.mcprohosting.plugins.dynamicbungee.DynamicBungee;
 import com.mcprohosting.plugins.dynamicbungee.data.NetTaskSubscribe;
+import com.mcprohosting.plugins.dynamicbungee.entities.User;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.config.ServerInfo;
@@ -37,6 +39,11 @@ public class BaseReceiver {
             return;
         }
 
+        if (User.getUser(player).getDestinationServer().equalsIgnoreCase(server)) {
+            return;
+        }
+
+        User.getUser(player).setDestinationServer(server);
         proxiedPlayer.connect(serverInfo);
     }
 }

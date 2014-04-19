@@ -2,6 +2,7 @@ package com.mcprohosting.plugins.dynamicbungee;
 
 import com.mcprohosting.plugins.dynamicbungee.config.MainConfig;
 import com.mcprohosting.plugins.dynamicbungee.data.NetHandler;
+import com.mcprohosting.plugins.dynamicbungee.listeners.PlayerListener;
 import com.mcprohosting.plugins.dynamicbungee.server.BaseReceiver;
 import com.mcprohosting.plugins.dynamicbungee.server.ServerHandler;
 import com.mcprohosting.plugins.dynamicbungee.server.ServerHeartbeatHandler;
@@ -33,6 +34,8 @@ public class DynamicBungee extends Plugin {
         initJedis();
 
         pluginLoader = new DynamicPluginLoader();
+
+        ProxyServer.getInstance().getPluginManager().registerListener(this, new PlayerListener());
     }
 
     public static DynamicBungee getPlugin() {
