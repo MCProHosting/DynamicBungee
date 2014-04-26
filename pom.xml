@@ -36,6 +36,7 @@
     </profiles>
 
     <build>
+        <finalName>${artifactId}</finalName>
         <defaultGoal>clean package</defaultGoal>
         <resources>
             <resource>
