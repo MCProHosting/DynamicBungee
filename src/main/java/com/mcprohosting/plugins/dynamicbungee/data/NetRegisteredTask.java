@@ -33,7 +33,7 @@ public class NetRegisteredTask {
             try {
                 objectMethodEntry.getValue().invoke(objectMethodEntry.getKey(), data);
             } catch (IllegalAccessException | InvocationTargetException e) {
-                e.printStackTrace();
+                // Something went wrong? Null data perhaps.
             }
         }
     }
